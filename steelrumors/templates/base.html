@@ -1,0 +1,56 @@
+<html>
+<head>
+<head>
+<title>Eventsaround , Find the nearest events around you</title>
+    <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="http://bootswatch.com/bower_components/font-awesome/css/font-awesome.min.css" media="screen">
+    <link rel="stylesheet" href="http://bootswatch.com/assets/css/bootswatch.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand"><i class="icon-map-marker"> </i>EventsAround</a>
+          
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+                 <form class="navbar-form navbar-left">
+      <input type="text" class="form-control col-lg-8" method="get" name="q" placeholder="Search">
+    </form>
+
+           <ul class="nav navbar-nav navbar-right">
+           {% if user.is_authenticated %}
+            <li><a href="{% url 'link_create' %}">Add Event</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'profile' slug=user.username %}"><b>{{ user.username }}</b></a></li> 
+
+    
+            {% else %}
+          <li><a href="{% url 'registration_register' %}"> Register</a></li> 
+          <li><a href="{% url 'login' %}">Login</a></li>     
+           {% endif %}
+                  
+          </ul> </div>
+      </div>
+    </div>
+    <br/>
+    <hr/>
+    
+    <center><img src="/static/img/events.jpg" height="60" width="60"></center>
+    <hr/>
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootswatch.js"></script>
+
+</body>
+</html>
