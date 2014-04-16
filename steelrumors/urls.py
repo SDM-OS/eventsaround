@@ -38,4 +38,5 @@ urlpatterns = patterns('',
         name="link_delete"),
 
     url(r'^vote/$', auth(VoteFormView.as_view()), name="vote"),
+    url(r'^search/$', 'links.views.search'),
 )

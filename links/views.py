@@ -131,8 +131,8 @@ class VoteFormView(JSONFormMixin, VoteFormBaseView):
 def search(request):
     if 'q' in request.GET and request.GET['q']:
         q = request.GET['q']
-        books = Link.objects.filter(title__icontains=q)
-        return render(request, 'search_results.html',
-            {'books': books, 'query': q})
+        events = Link.objects.filter(title__icontains=q)
+        return render(request, 'search.html',
+            {'events': events, 'query': q})
     else:
         return HttpResponse('Please submit a search term.')

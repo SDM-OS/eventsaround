@@ -19,9 +19,11 @@
           
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-                 <form class="navbar-form navbar-left">
+                 <form action="/search/" class="navbar-form navbar-left">
       <input type="text" class="form-control col-lg-8" method="get" name="q" placeholder="Search">
     </form>
+
+
 
            <ul class="nav navbar-nav navbar-right">
            {% if user.is_authenticated %}
